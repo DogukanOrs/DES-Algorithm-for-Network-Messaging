@@ -4,10 +4,6 @@ from des import des_encrypt
 
 
 def main():
-    print("=" * 50)
-    print("  DES SENDER")
-    print("=" * 50)
-
     # config
     receiver_ip = input("\n  Enter receiver IP [default: 127.0.0.1]: ").strip()
     if not receiver_ip:
@@ -62,8 +58,8 @@ def main():
             ciphertext = des_encrypt(plaintext, key)
 
             # Show what is being sent
-            print(f"  Plaintext:  {message}")
-            print(f"  Ciphertext: {ciphertext.hex().upper()}")
+            print(f"Plaintext:  {message}")
+            print(f"Ciphertext: {ciphertext.hex().upper()}")
 
             # Send ciphertext as hex string
             hex_data = ciphertext.hex().upper() + "\n"

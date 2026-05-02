@@ -34,7 +34,7 @@ def permute(bits, table):
 
 def left_circular_shift(bits, n):
     return bits[n:] + bits[:n]
-# --------------------------------
+
 #DES Table 
 
 #IP 
@@ -248,9 +248,7 @@ def feistel_round(left, right, round_key):
     return new_left, new_right
 
 
-# ============================================================
-# DES Block Encrypt / Decrypt
-# ============================================================
+# enrypt/decrypt
 
 def des_encrypt_block(block_bits, round_keys):
     """Encrypt a single 64-bit block using DES."""
