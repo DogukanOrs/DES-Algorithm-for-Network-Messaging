@@ -2,7 +2,7 @@
 
 A from-scratch implementation of the **Data Encryption Standard (DES)** in pure Python, paired with a TCP client/server that exchanges DES-encrypted messages over a socket.
 
-No cryptography libraries are used. Every part of the cipher — the permutation tables, the key schedule, the S-boxes, and all sixteen Feistel rounds — is implemented directly from the FIPS 46-3 specification.
+No cryptography libraries are used. Every part of the cipher — the permutation tables, the key schedule, the S-boxes, and all sixteen Feistel rounds — is implemented.
 
 ![Python](https://img.shields.io/badge/python-3.6%2B-blue)
 ![Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen)
