@@ -75,31 +75,6 @@ The round function `f` itself is four steps: expand the 32-bit half to 48 bits w
 
 Decryption is the same pipeline with the round keys applied in reverse order — the property that makes a Feistel network invertible without needing an inverse round function.
 
-### The network protocol
-
-The receiver listens; the sender connects. Both sides are given the same key by hand — there is no key exchange (see [Security Considerations](#security-considerations)). Messages are encrypted, hex-encoded, and sent newline-delimited.
-
-```mermaid
-sequenceDiagram
-    participant S as sender.py
-    participant R as receiver.py
-
-    Note over S,R: Both sides are configured with the same 64-bit key
-    R->>R: bind() and listen() on 0.0.0.0:65432
-    S->>R: TCP connect
-
-    loop for each message
-        S->>S: des_encrypt(plaintext, key)
-        S->>R: hex(ciphertext) + "\n"
-        R->>R: des_decrypt(bytes.fromhex(line), key)
-        R->>R: print ciphertext and recovered plaintext
-        R-->>S: acknowledgement
-    end
-
-    S->>R: "__EXIT__\n"
-    Note over S,R: both sides close the socket
-```
-
 The receiver buffers partial reads, so a message split across TCP segments is reassembled before decryption. If decryption or unpadding fails, the receiver replies with an error instead of dropping the connection.
 
 ---
