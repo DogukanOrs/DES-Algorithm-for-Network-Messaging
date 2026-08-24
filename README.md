@@ -244,16 +244,10 @@ A few things worth flagging for anyone reading the source:
 
 ## References
 
-- [FIPS PUB 46-3 — Data Encryption Standard](https://csrc.nist.gov/files/pubs/fips/46-3/final/docs/fips46-3.pdf) (withdrawn, retained for reference)
-- [NIST SP 800-67 Rev. 2](https://csrc.nist.gov/pubs/sp/800/67/r2/final) — on the deprecation of DES and TDEA
+- https://staff.emu.edu.tr/alexanderchefranov/en/teaching/cmse456-cmpe455/lecture-notes
 - [RFC 8018 §6.1](https://datatracker.ietf.org/doc/html/rfc8018#section-6.1) — PKCS#5 padding
-- Bruce Schneier, *Applied Cryptography*, Chapter 12
 
----
 
-## License
-
-MIT — see [`LICENSE`](LICENSE).
 
 ---
 
